@@ -1,0 +1,56 @@
+<div class="container">
+  <br>
+  <h2 class="text-center">Lista de Contatos</h2>
+
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Nome</th>
+          <th>Idade</th>
+          <th>Telefone</th>
+          <th>E-mail</th>
+          <th>Cidade</th>          
+          <th>-</th>          
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr *ngFor="let ct of lista">
+          <td>{{ct.nome}}</td>
+          <td>{{ct.idade}}</td>
+          <td>{{ct.telefone}}</td>
+          <td>{{ct.email}}</td>
+          <td>{{ct.cidade}}</td>
+          <td><button (click)="excluir(ct)" class="btn btn-danger">X</button></td>
+        </tr>
+      </tbody>
+    </table>
+    
+    <form #f="ngForm" (ngSubmit)="salvar(f.value)" >
+
+      <div class="input-group input-group-sm mb-3">
+        <input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" ngModel name="nome" placeholder="Informe o nome" required>
+      </div>
+
+      <div class="input-group input-group-sm mb-3">
+        <input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" ngModel name="idade" placeholder="Informe a idade" required>
+      </div>
+
+      <div class="input-group input-group-sm mb-3">
+        <input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" ngModel name="telefone" placeholder="Informe o telefone" required>
+      </div>
+
+      <div class="input-group input-group-sm mb-3">
+        <input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" ngModel name="email" placeholder="Informe o e-mail" required>
+      </div>
+
+      <div class="input-group input-group-sm mb-3">
+        <input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" ngModel name="cidade" placeholder="Informe a cidade" required>
+      </div>
+
+      <div>
+        <button class="btn btn-light">Salvar</button>
+      </div>
+
+    </form>
+</div>

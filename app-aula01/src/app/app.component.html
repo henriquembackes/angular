@@ -1,0 +1,32 @@
+<div class="container">
+    <!-- <h1>Hello World!</h1>
+    <hr>
+    <button (click)="ola()" class="btn btn-light">Olá mundo</button>
+    <p>Mensagem: {{msg}}</p>
+    <button [hidden]="esconder" class="btn btn-light">Outro</button>
+    <button (click)="showHide()" class="btn btn-light"> {{rotulo}}</button>
+    <hr> -->
+
+    <h2 class="text-center">Lista de Contatos</h2>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>E-mail</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let ct of lista">
+                <td>{{ct.nome}}</td>
+                <td>{{ct.email}}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <form #f="ngForm" (ngSubmit)="salvar(f.value)">
+        <input type="text" placeholder="Informe o nome" ngModel name="nome">
+        <input type="text" placeholder="Informe o e-mail" ngModel name="email">
+
+        <button class="btn btn-light">Salvar</button>
+    </form>
+</div>
